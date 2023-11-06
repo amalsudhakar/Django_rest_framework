@@ -1,3 +1,10 @@
 from django.db import models
 
 # Create your models here.
+class Task(models.Model):
+    title = models.CharField(max_length=250)
+    created_at = models.DateTimeField(auto_now_add=True)
+    completed = models.BooleanField(default=False, blank=True, null=True)
+
+    def __str__(self) -> str:
+        return self.title
