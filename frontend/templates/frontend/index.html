@@ -149,6 +149,12 @@
                     `
                         wrapper.innerHTML += item
                     }
+                    for (var i in list) {
+                        var editBtn =  document.getElementsByClassName('edit')[i]
+                        editBtn.addEventListener('click', function(){
+                            editItem(list[i])
+                        })
+                    }
                 })
         }
 
@@ -171,6 +177,10 @@
                 document.getElementById('form').reset()
             })
         })
+
+        function editItem(item){
+            console.log('Item clicked', item)
+        }
 
     </script>
 </body>
